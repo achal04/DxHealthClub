@@ -1,0 +1,53 @@
+drop database healthclub;
+create database healthclub;
+use healthclub;
+
+create table memgeneral
+(
+memberid int(10)primary key,
+name varchar(20),
+sports varchar(20),
+coach_id int(5),
+package_id varchar(10),
+gym_facility varchar(4),
+cost int(8),
+dues int(8)
+);
+
+create table mempersonal
+(
+memberid int(10),
+name varchar(20),
+sex varchar(7),
+age int(4),
+address varchar(20),
+phone int(13),
+doj date
+);
+
+create table coach
+(
+coachid int(10)primary key,
+coach_name varchar(20),
+sports varchar(20),
+sex varchar(7),
+phoneno int(16),
+address varchar(15),
+salary int(5)
+);
+
+create table package
+(
+packageid int(10)primary key,
+duration varchar(15),
+price int(5),
+gym_facility varchar(3)
+);
+
+insert into coach values(1,'dhayanchand','hockey','male',92220156,'r-15 raj nagar',6000);
+insert into coach values(2,'arun','cricket','male',9111155,'a23-lohia nagar',8000);
+insert into package values(1,'3 months',2700,'yes');
+insert into package values(2,'2 months',1500,'yes');
+insert into memgeneral values(1,'amit','hockey',2,'1','yes',2500,200);
+insert into memgeneral values(2,'anu','cricket',1,'2','yes',1500,0);
+insert into mempersonal values(1,'amit','male',27,'145 raj nagar',250054544,'2010-09-23');
